@@ -1,0 +1,207 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.css-button-shadow-border-sliding--red {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+  background: #d90429;
+ z-index: 1;
+}
+.css-button-shadow-border-sliding--red:hover:after {
+  width: 100%;
+  left: 0;
+}
+.css-button-shadow-border-sliding--red:after {
+  border-radius: 5px;
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+  transition: all 0.3s ease;
+  background-color: #2286c3;
+  right: 0;
+}
+.css-button-shadow-border-sliding--red:active {
+  top: 2px;
+}
+
+.css-button-sliding-to-left--red {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #2286c3;
+  color: #2286c3;
+}
+.css-button-sliding-to-left--red:hover {
+  color: #fff;
+}
+.css-button-sliding-to-left--red:hover:after {
+  width: 100%;
+}
+.css-button-sliding-to-left--red:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #2286c3;
+}
+
+ul{
+    list-style: none;/*Quitas viñetas*/
+}
+
+li{
+    list-style: none;
+}
+
+.nav{
+    font-family: Arial;
+    font-size: 25px;
+    color: black;
+}
+
+.titulo{
+    font-family: Arial;
+    font-size: 100px;
+}
+
+.css-button-3d--green {
+  min-width: 130px;
+  height: 40px;
+  color: #000000;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background: #80ed99;
+  box-shadow: 0 5px #57cc99;
+}
+.css-button-3d--green:hover {
+  box-shadow: 0 3px #57cc99;
+  top: 1px;
+}
+.css-button-3d--green:active {
+  box-shadow: 0 0 #57cc99;
+  top: 5px;
+}
+
+.css-button-3d--sky {
+  min-width: 130px;
+  height: 40px;
+  color: #000000;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background: #3a86ff;
+  box-shadow: 0 5px #4433ff;
+}
+.css-button-3d--sky:hover {
+  box-shadow: 0 3px #4433ff;
+  top: 1px;
+}
+.css-button-3d--sky:active {
+  box-shadow: 0 0 #4433ff;
+  top: 5px;
+}
+
+.css-button-3d--red {
+  min-width: 130px;
+  height: 40px;
+  color: #000000;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background: #ef233c;
+  box-shadow: 0 5px #d90429;
+}
+.css-button-3d--red:hover {
+  box-shadow: 0 3px #d90429;
+  top: 1px;
+}
+.css-button-3d--red:active {
+  box-shadow: 0 0 #d90429;
+  top: 5px;
+}
+
+.css-button-3d--yellow {
+  min-width: 130px;
+  height: 40px;
+  color: #000000;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background: #ffe566;
+  box-shadow: 0 5px #ffd819;
+}
+.css-button-3d--yellow:hover {
+  box-shadow: 0 3px #ffd819;
+  top: 1px;
+}
+.css-button-3d--yellow:active {
+  box-shadow: 0 0 #ffd819;
+  top: 5px;
+}
+
+.total {
+    position: relative;
+    left: 79%;
+}
+
+.table-fixed{
+   
+}
+
+

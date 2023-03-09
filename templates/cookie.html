@@ -1,0 +1,21 @@
+{%extends "layout.html"%}
+{%block content%}
+
+<div class="w3-card-4">
+    <div class="w3-container w3-teal">
+        <h2>Login</h2>
+    </div>
+    {%from "_macros.html" import render_field%}
+    <form action="#" class="w3-container w3-light-grey" style="padding-bottom: 1rem;" method="post" novalidate>
+        {{form.csrf_token}}
+        <input type="hidden" name="csrf_token" value="{{csrf_token}}">
+        {{render_field(form.username)}}
+        {{render_field(form.password)}}
+        <br>
+        <div class="custom-control">
+            <input class="w3-btn w3-blue-grey" type="submit" value="Revisar">
+        </div>
+    </form>
+</div>
+
+{%endblock%}

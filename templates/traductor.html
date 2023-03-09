@@ -1,0 +1,53 @@
+{%extends "layout.html"%}
+{%block content%}
+<h1>Traductor</h1>
+
+<div class="container-fluid">
+    <div class="text-center">
+        <h2>Registrar Palabra</h2>
+    </div>
+    {%from "_macros.html" import render_field%}
+    <form action="#" class="card-body" style="padding-bottom: 1rem;" method="post" novalidate>
+        {{ form.csrf_token }}
+        <input type="hidden" name="status" value="registrar">
+        {{render_field(form.spanish)}}
+        {{render_field(form.english)}}
+        <br>
+        <div class="text-center">
+            <input class="btn btn-outline-primary" type="submit" value="Registrar">
+        </div>
+    </form>
+</div>
+<hr>
+
+<div class="container-fluid">
+    <div class="container-fluid">
+        <h2 class="text-center">Traducir</h2>
+    </div>
+<form action="#" class="container-fluid" style="padding-bottom: 1rem; padding-top: 1rem" method="post" novalidate>
+    <div class="col-6">
+        <div class="form-check">
+            <input type="hidden" name="status" value="buscar">
+            <p><input class="form-check-input" type="radio" name="select" value="spanish">
+                <label  class="form-check-label">Español</label></p>
+            <p><input class="form-check-input" type="radio" name="select" value="english">
+                <label  class="form-check-label">Inglés</label></p>
+        </div>
+
+        <div class="container-fluid">
+            <label class="form-label">Buscar:  </label>
+            <input type="text" name="word" class="form-control" value="{{search}}">
+            <div class="custom-control">
+                <br>
+                <input class="btn btn-outline-primary" type="submit" value="Buscar">
+            </div>
+        </div>
+
+        <div class="container-fluid col-6">
+            <h3 class="text-center">{{result}}</h3>
+        </div>
+    </div>
+</form>
+</div>
+
+{%endblock%}
