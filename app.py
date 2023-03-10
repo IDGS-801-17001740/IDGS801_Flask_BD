@@ -24,6 +24,7 @@ def index():
         
         db.session.add(alum)
         db.session.commit()
+        return redirect(url_for('ABCompleto'))
     return render_template('index.html',form = create_from)
 
 @app.route('/ABCompleto' , methods = ['GET','POST'])
@@ -40,12 +41,13 @@ def modificar():
         id = request.args.get('id')
         #SELECT * FROM alumnos WHERE id == id
         alumn1 = db.session.query(Alumnos).filter(Alumnos.id == id).first()
+        create_form.id.data = id
         create_form.nombre.data = alumn1.nombre
         create_form.apellidos.data = alumn1.apellidos
         create_form.email.data = alumn1.email
         
     if request.method == 'POST':
-        id = request.args.get('id')
+        id = create_form.id.data
         #SELECT * FROM alumnos WHERE id == id
         alumn = db.session.query(Alumnos).filter(Alumnos.id == id).first()
         alumn.nombre = create_form.nombre.data
@@ -53,6 +55,39 @@ def modificar():
         alumn.email = create_form.email.data
         db.session.add(alumn)
         db.session.commit()
+        return redirect(url_for('ABCompleto'))
+    return render_template('modificar.html', form = create_form)
+
+
+@app.route("/eliminar",methods = ['GET','POST'])
+def eliminar():
+    create_form = forms.UserForm(request.form)
+    if request.method == 'GET':
+        id = request.args.get('id')
+        #SELECT * FROM alumnos WHERE id == id
+        alumn1 = db.session.query(Alumnos).filter(Alumnos.id == id).first()
+        create_form.id.data = id
+        create_form.nombre.data = alumn1.nombre
+        create_form.apellidos.data = alumn1.apellidos
+        create_form.email.data = alumn1.email
+        
+    if request.method == 'POST':
+        id = create_form.id.data
+        #SELECT * FROM alumnos WHERE id == id
+        alumn = db.session.query(Alumnos).filter(Alumnos.id == id).first()
+        """ alumn.nombre = create_form.nombre.data
+        alumn.apellidos = create_form.apellidos.data
+        alumn.email = create_form.email.data """
+        db.session.delete(alumn)
+        db.session.commit()
+        return redirect(url_for('ABCompleto'))
+    return render_template('eliminar.html', form = create_form)
+
+
+
+@app.route("/agregar")
+def func():
+    return
 
 if __name__ == '__main__':
     csrf.init_app(app)
